@@ -1,9 +1,12 @@
-import {QueryCtrl} from 'app/plugins/sdk';
-import './css/query-editor.css!'
+import { QueryCtrl } from 'grafana/app/plugins/sdk';
+import './css/query-editor.css';
 
 export class GenericDatasourceQueryCtrl extends QueryCtrl {
+  static templateUrl = 'partials/query.editor.html';
 
-  constructor($scope, $injector)  {
+  scope: any; // for angular
+
+  constructor($scope: any, $injector: any) {
     super($scope, $injector);
 
     this.scope = $scope;
@@ -11,7 +14,7 @@ export class GenericDatasourceQueryCtrl extends QueryCtrl {
     this.target.type = this.target.type || 'timeserie';
   }
 
-  getOptions(query) {
+  getOptions(query: any) {
     return this.datasource.metricFindQuery(query || '');
   }
 
@@ -23,6 +26,3 @@ export class GenericDatasourceQueryCtrl extends QueryCtrl {
     this.panelCtrl.refresh(); // Asks the panel to refresh data.
   }
 }
-
-GenericDatasourceQueryCtrl.templateUrl = 'partials/query.editor.html';
-
