@@ -40,6 +40,7 @@ information.
 - https://github.com/smcquay/jsonds
 - https://github.com/ContextLogic/eventmaster
 - https://gist.github.com/linar-jether/95ff412f9d19fdf5e51293eb0c09b850 (Python/pandas backend)
+- https://github.com/yesoreyeram/grafana-utils (Deno backend)
 
 ### Query API
 
